@@ -27,11 +27,11 @@ public class MinimumDepthofBinaryTree {
     	
     	if (root == null) return 0;
     	
+    	// simply use a modified breadth-first search to find the first leaf node.
     	nodeQueue.offer(root);
     	while (!nodeQueue.isEmpty()) {
 			temp = new LinkedList<TreeNode>();
 			depth++;
-			System.out.println(depth);
     		for (TreeNode node : nodeQueue) {
     			if (!isLeaf(node)) {
     				System.out.println("not leaf!");
@@ -42,7 +42,6 @@ public class MinimumDepthofBinaryTree {
     					System.out.println(min+", "+depth);
     					min = depth;
     				}
-    				System.out.println("break!");
     				break;
     			}
     		}
@@ -63,7 +62,7 @@ public class MinimumDepthofBinaryTree {
 		TreeNode(int x) { val = x;}
 	}
 	
-
+	// small test, not covering all condition obviously.
 	public static void main(String[] args) {
 		MinimumDepthofBinaryTree solution = new MinimumDepthofBinaryTree();
 		TreeNode root = solution.new TreeNode(1);
