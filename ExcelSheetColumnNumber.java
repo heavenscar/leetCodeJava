@@ -22,6 +22,7 @@ public class ExcelSheetColumnNumber {
 		int length = s.length();
 		int columnNumber = 0;
         
+        // cast
         for (int i = length - 1; i >= 0; i--) {
         	asciiValue = (int) s.charAt(i);
         	columnNumber += (asciiValue - 64) * Math.pow(26, length-1-i);
