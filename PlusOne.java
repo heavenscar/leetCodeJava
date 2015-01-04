@@ -11,6 +11,8 @@ package leetcode.mathProblems;
  */
 
 public class PlusOne {
+	// use recursive method to process the array, handle the carry digits problems.
+	// if a carry digit is involved in digits[0], create a new plusOne array to put data in with one more digit.
 	public int[] plusOne(int[] digits) {
 		int[] plusOne;
 		
@@ -27,6 +29,7 @@ public class PlusOne {
 		}
 	}
 	
+	// recursive method to calculate the array. mark carry digit in digits[0] by set it to 10.
 	private int[] processArray(int[] digits, int process) {
 		if (digits[process] < 9 || process == 0) {
 			digits[process] += 1;
